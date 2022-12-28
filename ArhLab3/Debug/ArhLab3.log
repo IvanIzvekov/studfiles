@@ -1,0 +1,19 @@
+﻿  ArhLab3.cpp
+C:\Users\ivani\source\repos\ArhLab3\ArhLab3.cpp(35,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\ivani\source\repos\ArhLab3\ArhLab3.cpp(66): message : выполняется компиляция ссылки на экземпляр шаблон функции "double test<T>(void)"
+          with
+          [
+              T=double
+          ]
+C:\Users\ivani\source\repos\ArhLab3\ArhLab3.cpp(117): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Math<double>(void)"
+C:\Users\ivani\source\repos\ArhLab3\ArhLab3.cpp(45,40): warning C4244: аргумент: преобразование "int" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ivani\source\repos\ArhLab3\ArhLab3.cpp(49,28): warning C4244: аргумент: преобразование "int" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+  ArhLab3.vcxproj -> C:\Users\ivani\source\repos\ArhLab3\Debug\ArhLab3.exe

@@ -1,0 +1,7 @@
+﻿  deicstra.cpp
+C:\Users\ivani\source\repos\deicstra\deicstra.cpp(63,17): warning C4244: =: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+  deicstra.vcxproj -> C:\Users\ivani\source\repos\deicstra\Debug\deicstra.exe

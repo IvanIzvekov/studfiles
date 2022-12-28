@@ -1,0 +1,59 @@
+5.1
+goal :- writeln("1 tusk"), read(A), read(B), 
+    firstTusk(A, B).
+
+firstTusk(A, B) :- B >= A, B mod 2 =:= 1, writeln(B), C is B - 1, firstTusk(A, C).
+firstTusk(A, B) :- B >= A, B mod 2 =:= 0, C is B - 1, firstTusk(A, C).
+firstTusk(A, B) :- B < A.
+
+5.2
+goal :- writeln("2 tusk"), exo.
+
+exo :- repeat, read(A), secondTusk(A).
+
+fib(A, B) :- A > 1, A1 is A - 2, fib(A1, B1), A2 is A - 1, fib(A2, B2), B is B1 + B2.
+fib(0, 1).
+fib(1, 1).
+
+secondTusk(A) :- A < 0.
+secondTusk(A) :- A1 is A, fib(A1, B), writeln(B), fail.
+
+5.3
+goal :- split(3, 8, [1, 2, 3, 4, 5, 6, 7, 8, 9], A, B, C), writeln(A), writeln(B), writeln(C).
+
+split(N1, N2, [H | T], [H | T1], L2, L3) :-
+  H < min(N1, N2),
+  split(N1, N2, T, T1, L2, L3).
+
+split(N1, N2, [H | T], L1, [H | T2], L3) :-
+  H =< max(N1, N2),
+  split(N1, N2, T, L1, T2, L3).
+
+split(N1, N2, [H | T], L1, L2, [H | T3]) :-
+  split(N1, N2, T, L1, L2, T3).
+
+split(_, _, [], [], [], []).
+
+5.4
+mostСommon([], [], 0) :- !.
+
+mostСommon([H | T], L_res, Max) :-
+  delete(T, H, L_temp),
+  length([H | T], LenL),
+  length(L_temp, LenL_temp),
+  Max_temp is LenL - LenL_temp,
+  mostСommon(L_temp, L_new, Max_maybe),
+  (Max_temp > Max_maybe -> % if
+    (L_res = [H], Max is Max_temp);  % true
+    (Max is Max_maybe,
+    (Max_temp =:= Max_maybe ->  % false
+      L_res = [H | L_new];
+      L_res = L_new))
+  ).
+
+mostСommon(L, L_new) :- mostСommon(L, L_new, _).
+
+goal() :-
+  writeln('Введите список: '), read(L),
+  mostСommon(L, L_new),
+  writeln('Результат: '), writeln(L_new).

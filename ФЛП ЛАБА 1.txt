@@ -1,0 +1,14 @@
+(cadr(cadaar (quote(((1 (2 *))3)4))))
+
+(cons nil nil)
+
+(cons 1(cons (cons 2 (cons 3 nil))nil))
+(LIST 1(LIST 2 3))
+
+(DEFUN SWAP(X)
+(APPEND 
+(LAST X)(BUTLAST(CDR X ))(LIST(CAR X))
+)
+)
+
+(SWAP `(a b c d f e))

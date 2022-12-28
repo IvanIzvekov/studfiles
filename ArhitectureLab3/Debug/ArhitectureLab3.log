@@ -1,0 +1,5 @@
+﻿  ArhitectureLab3.cpp
+C:\Users\ivani\source\repos\ArhitectureLab3\ArhitectureLab3.cpp(207,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\ivani\source\repos\ArhitectureLab3\ArhitectureLab3.cpp(231,22): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\ivani\source\repos\ArhitectureLab3\ArhitectureLab3.cpp(235,23): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  ArhitectureLab3.vcxproj -> C:\Users\ivani\source\repos\ArhitectureLab3\Debug\ArhitectureLab3.exe

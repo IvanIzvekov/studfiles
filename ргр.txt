@@ -1,0 +1,42 @@
+1 задание
+/*удаление из второго множества, всех элементов первого множества*/
+goal :-
+    writeln('Введите список: '), read(L1), read(L2),
+      func(L2, L1, Result),
+    write('deduction= '), writeln(Result).
+
+func([],L,L).
+func([X|L1],L2,Result) :-
+    member(X,L2),
+    delete(L2,X,L),
+    func(L1,L,Result);
+    func(L1,L2,Result).
+
+2 задание
+
+goal:- open('qwe.txt', read, F),
+       set_input(F),
+       write_screen(F),
+       close(F).
+
+getFirstSymbol([H|T], First) :- First = H.
+
+getBriefly1([H|T], First)     :-  First = H.
+getBriefly2([_,S|_], First)   :-  string_chars(S,L), getFirstSymbol(L, First).
+getBriefly3([_,_,S|_], First) :-  string_chars(S,L), getFirstSymbol(L, First).
+
+parseStr(S, R1) :- split_string(S, ' ', '', L),
+               getBriefly1(L, K1),
+               getBriefly2(L, K2),
+               getBriefly3(L, K3),
+               atomic_list_concat([K1, ' ', K2, '. ', K3, '.'], '', R),
+               R1 = R.
+
+write_screen(_):- at_end_of_stream.
+write_screen(F):- read_line_to_codes(F, L),
+                  string_to_list(S, L),
+                  parseStr(S, R),
+                  tell('123.txt'),
+                  writeln(R),
+                  write_screen(F),
+                  told.

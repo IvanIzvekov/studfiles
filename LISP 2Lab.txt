@@ -1,0 +1,37 @@
+21 задание
+
+(DEFUN qwerty(L)
+	(cond
+		((NULL L)'(L is empty))
+		((NULL (CDR L))(CAR(CONS L nil)))
+		(t (CONS(+(CAR L)(CAR(LAST L)))(qwerty(BUTLAST(CDR L)))))
+	)
+)
+
+(qwerty '(1 2 3 9 -2 5 3))
+
+
+11 
+
+(DEFUN qwerty(L R)
+	(cond
+		((NULL L)R)
+		((NULL R)L)
+		(t (APPEND(LIST(CAR L)(CAR R))(qwerty(CDR L)(CDR R))))
+	)
+)
+
+(qwerty '(1 2 3 4 5 6) '(a b c d))
+
+1
+
+(DEFUN qwerty(X L)
+	(cond
+		((NULL L) '())
+		((SYMBOLP (CAR L)) (CONS(CAR L) (qwerty X(CDR L))))
+		((< (CAR L) 0)(CONS(CAR L) (qwerty X(CDR L))))
+		(t(CONS(LIST (CAR L) X)(qwerty X(CDR L))))
+	)
+)
+
+(qwerty '* '(d -2 d 3 6 c -2 4))

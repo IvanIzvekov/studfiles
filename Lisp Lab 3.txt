@@ -1,0 +1,43 @@
+Задание 1
+
+(DEFUN pred(X L)
+	(cond
+		((NULL X) '(1))
+		((NULL L) '(2))
+		(t(EQUAL X L))
+	)
+)
+
+(pred'(1 2 3 4) '(1 2 3 4))
+
+Задание 4
+
+(defun peres (X L)
+   (cond 
+		 ((null X) nil)
+         ((member (car X) L) (cons (car X) (peres (cdr X) L)))
+         (t (peres (cdr X) L))
+	)
+)
+
+(peres '(1 2 4 5) '( 7 6 5 4 3))
+
+Задание 9
+
+(defun star_zamena (f l)
+	(mapcar (lambda (x)
+		(cond
+			((funcall f x) (list '* x))
+			(t x)
+		)
+	) l)
+)
+
+(star_zamena (lambda (x) 
+	(cond
+		((not (numberp x))nil)
+		((evenp x) t)
+		((> x 0) t)
+		(t nil)
+	)
+) '(4 g e -3 -2 5 -1 k))
